@@ -21,6 +21,7 @@ class AdminMiddleware
             return $next($request);
         }
 
+        dd('sdklfjf');
         return redirect('/dashboard');
     }
 }

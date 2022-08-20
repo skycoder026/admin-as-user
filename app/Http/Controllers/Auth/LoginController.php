@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -46,7 +46,5 @@ class LoginController extends Controller
         {
             return 'admin/dashboard';  // admin dashboard path
         }
-
-        return 'home';  // user dashboard path
     }
 }

@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 include __DIR__ . '/_web_user.php';
+
+
+Route::group(['prefix' => 'temp-user', 'as' => 'temp_user.'], function () {
+    include __DIR__ . '/_web_user.php';
+});

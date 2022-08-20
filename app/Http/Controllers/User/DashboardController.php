@@ -11,4 +11,13 @@ class DashboardController extends Controller
     {
         return view('user.dashboard');
     }
+
+    public function logoutTempUser()
+    {
+        if(session()->has('temp_user')) {
+            session()->forget('temp_user');
+        }
+
+        return redirect()->route('admin.dashboard');
+    }
 }

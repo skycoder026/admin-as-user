@@ -13,7 +13,35 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        You are logged in! as <strong>Admin</strong>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-stripped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/L</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>
+                                                    <a target="_blank" href="{{ route('admin.user-login', $user->id) }}" class="btn btn-sm btn-primary">Login</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
