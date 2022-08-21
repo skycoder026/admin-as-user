@@ -20,7 +20,7 @@ function auth_user()
 
 function user_route($name)
 {
-    return route('temp_user.' . $name);
+    return route("temp_user$name");
 }
 
 
@@ -32,5 +32,5 @@ function user_url($path)
 
 function is_temp_user()
 {
-    return request()->segment(1) == 'temp-user';
+    return str_contains(request()->url(), 'temp-user');
 }
